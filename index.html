@@ -3,22 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Manufacturing Journal Entry</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: auto; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid black; padding: 8px; text-align: center; }
+        th { background-color: #f4f4f4; }
+        .input-container { display: flex; gap: 10px; margin-bottom: 20px; }
+        input, select, button { padding: 8px; }
+    </style>
 </head>
 <body>
-    <header>
-
-    </header>
-
-    <main>
-
-        <section>
-
-        </section>
-
-    </main>
-
-    <script type="module" src="script.js"></script>
+    <div class="container">
+        <h2>Manufacturing Journal Entry</h2>
+        <div class="input-container">
+            <select id="account">
+                <option value="Raw Materials Inventory">Raw Materials Inventory</option>
+                <option value="Factory Salaries and Wages">Factory Salaries and Wages</option>
+                <option value="Manufacturing Overhead">Manufacturing Overhead</option>
+                <option value="Work in Process Inventory">Work in Process Inventory</option>
+                <option value="Finished Goods Inventory">Finished Goods Inventory</option>
+                <option value="Cost of Goods Sold">Cost of Goods Sold</option>
+            </select>
+            <input type="number" id="amount" placeholder="Amount">
+            <select id="type">
+                <option value="debit">Debit</option>
+                <option value="credit">Credit</option>
+            </select>
+            <input type="text" id="description" placeholder="Description">
+            <button onclick="addEntry()">Add Entry</button>
+        </div>
+        
+        <div id="t-accounts"></div>
+    </div>
 </body>
 </html>
